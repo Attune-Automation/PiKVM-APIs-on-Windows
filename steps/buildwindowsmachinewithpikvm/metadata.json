@@ -1,0 +1,20 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "3b3e8745-d4db-4c54-ac88-ff9f4e9b81a4", 
+    "isBlueprint": true, 
+    "key": "buildwindowsmachinewithpikvm", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "preparepikvmandstartosinstallation"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "waitforwindowsstartup"
+        }
+    ], 
+    "name": "Build Windows Machine with PiKVM", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

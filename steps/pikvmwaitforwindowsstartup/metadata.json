@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "31636697-9acd-4fcd-90e4-6aa058bacaee", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "pikvmwaitforwindowsstartup", 
+    "name": "PiKVM Wait for Windows Startup", 
+    "osCredKey": "newwindowsnodeuseradministrator", 
+    "serverKey": "newwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 150, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

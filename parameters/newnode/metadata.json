@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "701e7221-dbb6-49be-864b-3830cfa5855c", 
+    "key": "newnode", 
+    "name": "New Node", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Server"
+}

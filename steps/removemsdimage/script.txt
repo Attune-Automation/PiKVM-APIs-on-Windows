@@ -1,0 +1,42 @@
+$PIKVM = "{pikvmIpAddress}"
+$USER = "{pikvmUserAdmin.user}"
+$PASSWORD = "{pikvmUserAdmin.password}"
+$FILE = "kickstart_{newNode.fqn}.iso"
+
+$uri = "https://$PIKVM/api/msd/remove?image=$FILE"
+$headers = @{
+    "X-KVMD-User" = $USER
+    "X-KVMD-Passwd" = $PASSWORD
+}
+
+# Bypass SSL certificate validation
+add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+try {
+    $response = Invoke-WebRequest -Uri $uri -Headers $headers -Method Post
+
+    # Output the response
+    $response.Content | ConvertFrom-Json | ConvertTo-Json
+} catch {
+    
+    Write-Host "An error occurred: $_"
+
+    # Check if the error is 'MsdDisconnectedError'
+    if ($_ -match 'MsdUnknownImageError') {
+        Write-Host "The image is not found in the storage."
+        exit 0
+    }
+    
+    exit 1
+}

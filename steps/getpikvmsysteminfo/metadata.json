@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ee477a44-dfff-4e5a-8811-e35187542135", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "getpikvmsysteminfo", 
+    "name": "Get PiKVM System Info", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 240, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

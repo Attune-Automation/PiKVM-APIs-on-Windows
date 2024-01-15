@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "5e960691-eb18-49a1-bf40-3007ac447c4e", 
+    "key": "pikvmuseradmin", 
+    "name": "PiKVM User: Admin", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.OsCred"
+}

@@ -1,0 +1,28 @@
+$PIKVM = "{pikvmIpAddress}"
+$USER = "{pikvmUserAdmin.user}"
+$PASSWORD = "{pikvmUserAdmin.password}"
+
+$uri = "https://$PIKVM/api/msd/set_connected?connected=1"
+$headers = @{
+    "X-KVMD-User" = $USER
+    "X-KVMD-Passwd" = $PASSWORD
+}
+
+# Bypass SSL certificate validation
+add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+$response = Invoke-WebRequest -Uri $uri -Headers $headers -Method Post
+
+# Output the response
+$response.Content | ConvertFrom-Json | ConvertTo-Json

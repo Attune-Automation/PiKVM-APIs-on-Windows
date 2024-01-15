@@ -1,0 +1,24 @@
+
+$Start = Get-Date
+$count=0
+
+do {
+    $pct=$(Get-WmiObject win32_processor | select LoadPercentage).LoadPercentage;
+    Write-Host "LoadPercentage: $pct, Count: $count";
+    if ($pct -lt 15) {
+        $count += 1;
+    } else {
+        $count=0
+    }
+    
+    if ( $count -ge 10 ) {
+        Write-Host "Wait completed, we were idle for 10 seconds";
+        break;
+    }
+    
+    if ( ( Get-Date ) -gt $Start.AddMinutes(2) ) {
+        Write-Host "Wait timed out, we waited two minutes";
+        break;
+    }
+    
+} until ($false);

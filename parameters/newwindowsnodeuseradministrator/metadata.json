@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "a62243b7-32ef-4378-aed5-f5004018f62d", 
+    "key": "newwindowsnodeuseradministrator", 
+    "name": "New Windows Node User: Administrator", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.WinOsCred"
+}

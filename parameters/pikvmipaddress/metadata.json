@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "898f6c67-af6b-4d93-9f54-3463cd517a92", 
+    "key": "pikvmipaddress", 
+    "name": "PiKVM IP Address", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

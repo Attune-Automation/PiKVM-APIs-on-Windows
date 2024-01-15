@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": "stop", 
+    "enabled": true, 
+    "externalUuid4": "ad87ee06-0302-4356-ac41-8982476e8662", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "setatxpowersoftoff", 
+    "name": "Set ATX Power Soft Off", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 240, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

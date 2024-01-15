@@ -1,0 +1,16 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "da3e76ee-e0ab-41c6-99ef-bb5754657a04", 
+    "interpreter": 2, 
+    "interpreterCommand": "", 
+    "interpreterScriptExt": null, 
+    "interpreterScriptSyntax": "", 
+    "key": "waitforwindowsinstallation", 
+    "name": "Wait for Windows Installation", 
+    "osCredKey": "automationworkerwindowsuseradministrator", 
+    "serverKey": "automationworkerwindowsnode", 
+    "successExitCode": 0, 
+    "timeout": 3600, 
+    "type": "com.servertribe.attune.tuples.StepWinRmTuple"
+}

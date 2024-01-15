@@ -1,0 +1,32 @@
+{
+    "actionOnStepFail": "stop", 
+    "concurrency": 1, 
+    "enabled": true, 
+    "externalUuid4": "b3ef9124-0c0a-4e7c-96aa-02eb8657bf2e", 
+    "isBlueprint": false, 
+    "key": "waitforwindowsstartup", 
+    "links": [
+        {
+            "order": 0, 
+            "stepKey": "waitforwindowsinstallation"
+        }, 
+        {
+            "order": 50, 
+            "stepKey": "disconnectmsdimage"
+        }, 
+        {
+            "order": 100, 
+            "stepKey": "removemsdimage"
+        }, 
+        {
+            "order": 150, 
+            "stepKey": "winrmhttps"
+        }, 
+        {
+            "order": 200, 
+            "stepKey": "pikvmwaitforwindowsstartup"
+        }
+    ], 
+    "name": "Wait for Windows Startup", 
+    "type": "com.servertribe.attune.tuples.StepGroupTuple"
+}

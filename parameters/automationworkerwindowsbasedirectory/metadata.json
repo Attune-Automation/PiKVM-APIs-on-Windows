@@ -1,0 +1,7 @@
+{
+    "externalUuid4": "9b186457-aec2-4661-b821-ee76ed067840", 
+    "key": "automationworkerwindowsbasedirectory", 
+    "name": "Automation Worker Windows Base Directory", 
+    "showInPlan": true, 
+    "type": "c.s.s.b.phv.Text"
+}

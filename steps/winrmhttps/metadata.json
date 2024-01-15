@@ -1,0 +1,13 @@
+{
+    "actionOnStepFail": null, 
+    "enabled": true, 
+    "externalUuid4": "284e01e1-2b7a-4c87-8366-26f1d73260ac", 
+    "key": "winrmhttps", 
+    "minDowntime": 0, 
+    "name": "WinRM HTTPS", 
+    "postWait": 0, 
+    "preWait": 0, 
+    "serverKey": "newnode", 
+    "tcpPort": 5986, 
+    "type": "com.servertribe.attune.tuples.StepTcpPingTuple"
+}

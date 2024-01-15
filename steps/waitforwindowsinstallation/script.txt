@@ -1,0 +1,57 @@
+$PIKVM = "{pikvmIpAddress}"
+$USER = "{pikvmUserAdmin.user}"
+$PASSWORD = "{pikvmUserAdmin.password}"
+
+$uri = "https://$PIKVM/api/hid"
+$headers = @{
+    "X-KVMD-User" = $USER
+    "X-KVMD-Passwd" = $PASSWORD
+}
+
+function NumLock {
+    
+    try {
+        $response = Invoke-WebRequest -Uri $uri -Headers $headers -Method Get
+        return $response.result.keyboard.leds.num
+    } catch {
+        Write-Host "Error occurred: $_"
+        return $false
+    }
+}
+
+# Bypass SSL certificate validation
+add-type @"
+    using System.Net;
+    using System.Security.Cryptography.X509Certificates;
+    public class TrustAllCertsPolicy : ICertificatePolicy {
+        public bool CheckValidationResult(
+            ServicePoint srvPoint, X509Certificate certificate,
+            WebRequest request, int certificateProblem) {
+            return true;
+        }
+    }
+"@
+[System.Net.ServicePointManager]::CertificatePolicy = New-Object TrustAllCertsPolicy
+
+Write-Host "Numlock is $(NumLock)"
+
+while ($(NumLock) -eq $false) {
+    Write-Host "Waiting for PowerOn"
+    Start-Sleep -Seconds 1
+}
+
+Write-Host "Numlock is $(NumLock)"
+
+while ($(NumLock) -eq $true) {
+    Write-Host "Waiting for WinPE to turn off numlock"
+    Start-Sleep -Seconds 5
+}
+
+Write-Host "Numlock is $(NumLock)"
+
+while ($(NumLock) -eq $false) {
+    Write-Host "Waiting reboot to turn numlock back on again"
+    Start-Sleep -Seconds 2
+}
+
+Write-Host "Numlock is $(NumLock)"
