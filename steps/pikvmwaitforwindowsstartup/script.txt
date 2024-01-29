@@ -12,7 +12,7 @@ do {
     }
     
     if ( $count -ge 10 ) {
-        Write-Host "Wait completed, we were idle for 10 seconds";
+        Write-Host "Wait completed, the device was idle for 10 seconds";
         break;
     }
     

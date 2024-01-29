@@ -70,10 +70,10 @@ This Project contains the following Blueprints.
 | Automation Worker Windows Node | Windows Node | `automationworkerwindowsnode` |  |
 | Automation Worker Windows User: Administrator | Windows Credential | `automationworkerwindowsuseradministrator` |  |
 | New Node | Basic Node | `newnode` |  |
-| PiKVM IP Address | Text | `pikvmipaddress` |  |
-| PiKVM User: Admin | Basic Credential | `pikvmuseradmin` |  |
 | New Windows Node | Windows Node | `newwindowsnode` |  |
 | New Windows Node User: Administrator | Windows Credential | `newwindowsnodeuseradministrator` |  |
+| PiKVM IP Address | Text | `pikvmipaddress` |  |
+| PiKVM User: Admin | Basic Credential | `pikvmuseradmin` |  |
 
 
 
